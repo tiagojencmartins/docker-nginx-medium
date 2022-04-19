@@ -12,4 +12,4 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /usr/src/core
 COPY --from=build /usr/src/core/release .
 
-ENTRYPOINT ["dotnet", "backend.dll"]
+ENTRYPOINT ["dotnet", "weatherservice.dll"]
