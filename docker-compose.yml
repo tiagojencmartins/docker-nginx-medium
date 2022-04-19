@@ -1,0 +1,27 @@
+version: "3.9"
+
+networks:
+  demo:
+
+services:
+  nginx:
+    container_name: nginx
+    restart: always
+    build:
+      context: nginx
+    ports:
+      - 80:80
+    networks:
+      - demo
+  app:
+    container_name: app
+    build:
+      context: app
+    networks:
+      - demo
+  weather-service:
+    container_name: weather-service
+    build:
+      context: weather-service
+    networks:
+      - demo
